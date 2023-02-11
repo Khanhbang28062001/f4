@@ -1,4 +1,4 @@
-package com.ctu;
+package com.ctu.java.main;
 
 import static org.junit.Assert.assertTrue;
 
