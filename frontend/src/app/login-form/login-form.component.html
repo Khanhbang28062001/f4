@@ -1,0 +1,71 @@
+<div class="Login_wrapper Login_hasBg">
+    <div class="Login_container">
+        <div class="Login_content">
+            <div class="Login_header">
+                <a href="">
+                    <img class="Login_logo" src="/frontend/src/app/assets/logo/Logo_F4.png" alt="F4">
+                </a>
+                <h1 class="Login_title">Đăng nhập vào F4</h1>
+            </div>
+            <div class="Login_body">
+                <div>
+                    <form [formGroup]="form">
+                        <div *ngIf="form.errors" class="alert alert-danger">
+                            The username or password is invalid.
+                        </div>
+                    
+                        <div formGroupName="account">
+                            <div class="form-group">
+                                <label for="username">Tài khoản</label>
+                                <input
+                                    formControlName="username"
+                                    id="username" 
+                                    type="text" 
+                                    class="form-control width-350px">
+                                <div *ngIf="username?.pending">
+                                    Checking for uniqueness...
+                                </div>
+                                <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
+                                    
+                                    <div *ngIf="username?.errors?.required">Username is required</div>    
+                                    <div *ngIf="username?.errors?.minlength">Username should be minimum {{ username?.errors?.minlength.requiredLength }} characters</div>    
+                                    <div *ngIf="username?.errors?.cannotContainSpace">Username cannot contain space</div>
+                                    <div *ngIf="username?.errors?.shouldBeUnique">Username is already taken</div>    
+                        
+                                </div>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="password">Mật khẩu</label>
+                                <input
+                                    formControlName="password"
+                                    id="password" 
+                                    type="password" 
+                                    class="form-control width-350px">
+                                
+                                </div>
+                                          
+                            </div>
+                            <div class="login-btn">
+                                <button class="btn btn-primary at-right">Đăng nhập</button>
+
+                            </div>
+                                 
+                    </form>
+                    
+                    <div class="hasAccount">
+                        Bạn chưa có tài khoản? <a [routerLink]="['/app/signup-form/signup-form.component.html']">Đăng ký</a>
+                    </div>
+                    <div class="Login_acceptTerm">
+                        <p>Việc bạn sử dụng trang web này đồng nghĩa bạn đồng ý với
+                            <a href="">Điều khoản sử dụng</a> của chúng tôi
+                        </p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>       
+    </div>
+</div>
