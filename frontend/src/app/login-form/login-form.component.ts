@@ -21,4 +21,7 @@ export class LoginFormComponent {
   get username(){
     return this.form.get('account.username');
   }
+  get password() {
+    return this.form.get('account.password');
+  }
 }

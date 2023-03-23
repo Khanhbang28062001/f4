@@ -3,7 +3,7 @@
         <div class="Login_content">
             <div class="Login_header">
                 <a href="">
-                    <img class="Login_logo" src="/frontend/src/app/assets/logo/Logo_F4.png" alt="F4">
+                    <img class="Login_logo" src="https://my-web-study-onl-project.s3.ap-southeast-1.amazonaws.com/Logo/Logo_F4.png" alt="F4">
                 </a>
                 <h1 class="Login_title">Đăng nhập vào F4</h1>
             </div>
@@ -44,17 +44,24 @@
                                     class="form-control width-350px">
                                 
                                 </div>
+                                <div *ngIf="password?.touched && password?.invalid" class="alert alert-danger">
+                                    
+                                    <div *ngIf="password?.errors?.required">Password is required</div>    
+                                    <div *ngIf="password?.errors?.minlength">Password should be minimum {{ password?.errors?.minlength.requiredLength }} characters</div>    
+                                    <div *ngIf="password?.errors?.cannotContainSpace">Password cannot contain space</div>
+                        
+                                </div>
                                           
-                            </div>
-                            <div class="login-btn">
-                                <button class="btn btn-primary at-right">Đăng nhập</button>
+                        </div>
+                        <div class="login-btn">
+                            <button class="btn btn-primary at-right">Đăng nhập</button>
 
-                            </div>
+                        </div>
                                  
                     </form>
                     
                     <div class="hasAccount">
-                        Bạn chưa có tài khoản? <a [routerLink]="['/app/signup-form/signup-form.component.html']">Đăng ký</a>
+                        Bạn chưa có tài khoản? <a [routerLink]="['/signup-form/']">Đăng ký</a>
                     </div>
                     <div class="Login_acceptTerm">
                         <p>Việc bạn sử dụng trang web này đồng nghĩa bạn đồng ý với

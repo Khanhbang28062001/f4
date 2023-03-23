@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrangChuHvComponent } from './trang-chu-hv.component';
+import { StudyRouteBeComponent } from './study-route-be.component';
 
-describe('TrangChuHvComponent', () => {
-  let component: TrangChuHvComponent;
-  let fixture: ComponentFixture<TrangChuHvComponent>;
+describe('StudyRouteBeComponent', () => {
+  let component: StudyRouteBeComponent;
+  let fixture: ComponentFixture<StudyRouteBeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrangChuHvComponent ]
+      declarations: [ StudyRouteBeComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TrangChuHvComponent);
+    fixture = TestBed.createComponent(StudyRouteBeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

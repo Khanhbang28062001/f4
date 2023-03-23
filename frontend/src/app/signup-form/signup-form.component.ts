@@ -5,7 +5,8 @@ import { UsernameValidators } from './username.validators';
 @Component({
   selector: 'signup-form',
   templateUrl: './signup-form.component.html',
-  styleUrls: ['./signup-form.component.css']
+  styleUrls: ['./signup-form.component.css'],
+  
 })
 export class SignupFormComponent {
   form = new FormGroup({
@@ -20,5 +21,9 @@ export class SignupFormComponent {
 
   get username(){
     return this.form.get('account.username');
+  }
+
+  get password() {
+    return this.form.get('account.password');
   }
 }
