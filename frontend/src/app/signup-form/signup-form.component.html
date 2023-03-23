@@ -2,6 +2,9 @@
     <div class="Login_container">
         <div class="Login_content">
             <div class="Login_header">
+                <a href="">
+                    <img class="Login_logo" src="https://my-web-study-onl-project.s3.ap-southeast-1.amazonaws.com/Logo/Logo_F4.png" alt="F4">
+                </a>
                 <div class="Login_title">Tạo tài khoản trên F4</div>
             </div>
             <div class="Login_body">
@@ -37,7 +40,13 @@
                                     id="password" 
                                     type="password" 
                                     class="form-control width-350px">
-                                
+                                <div *ngIf="password?.touched && password?.invalid" class="alert alert-danger">
+                                    
+                                    <div *ngIf="password?.errors?.required">Password is required</div>    
+                                    <div *ngIf="password?.errors?.minlength">Password should be minimum {{ password?.errors?.minlength.requiredLength }} characters</div>    
+                                    <div *ngIf="password?.errors?.cannotContainSpace">Password cannot contain space</div>
+                            
+                                </div>
                             </div>
                                           
                             
